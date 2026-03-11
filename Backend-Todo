@@ -1,0 +1,184 @@
+# Backend Infrastructure Checklist
+
+This document tracks the implementation progress of the backend system.
+
+---
+
+# 1. Authentication
+
+## Endpoints
+
+- [ ] POST /auth/register
+- [ ] POST /auth/login
+- [ ] GET /auth/profile
+- [ ] PATCH /auth/profile
+
+## Database Model
+
+### User
+
+- [ ] id
+- [ ] name
+- [ ] email
+- [ ] password
+- [ ] role (admin or student)
+- [ ] createdAt
+
+---
+
+# 2. Contact Form
+
+## Endpoint
+
+- [ ] POST /contact
+
+## Database Model
+
+### ContactMessage
+
+- [ ] id
+- [ ] name
+- [ ] email
+- [ ] message
+- [ ] createdAt
+
+---
+
+# 3. Courses
+
+## Endpoints
+
+- [ ] GET /courses
+- [ ] GET /courses/:id
+- [ ] POST /courses
+- [ ] PATCH /courses/:id
+- [ ] DELETE /courses/:id
+
+## Database Model
+
+### Course
+
+- [ ] id
+- [ ] title
+- [ ] description
+- [ ] price
+- [ ] duration
+- [ ] instructor
+- [ ] thumbnail
+
+---
+
+# 4. Course Enrollment
+
+## Endpoints
+
+- [ ] POST /enroll
+- [ ] GET /my-courses
+- [ ] GET /enrollments
+
+## Database Model
+
+### Enrollment
+
+- [ ] id
+- [ ] userId
+- [ ] courseId
+- [ ] paymentStatus
+- [ ] enrolledAt
+
+---
+
+# 5. Payments
+
+## Endpoints
+
+- [ ] POST /payment/initialize
+- [ ] POST /payment/verify
+
+## Database Model
+
+### Payment
+
+- [ ] id
+- [ ] userId
+- [ ] courseId
+- [ ] amount
+- [ ] status
+- [ ] reference
+
+---
+
+# 6. Testimonials
+
+## Endpoints
+
+- [ ] GET /testimonials
+- [ ] POST /testimonials
+- [ ] DELETE /testimonials/:id
+
+## Database Model
+
+### Testimonial
+
+- [ ] id
+- [ ] name
+- [ ] role
+- [ ] message
+- [ ] image
+
+---
+
+# 7. Projects
+
+## Endpoints
+
+- [ ] GET /projects
+- [ ] GET /projects/:id
+- [ ] POST /projects
+- [ ] PATCH /projects/:id
+- [ ] DELETE /projects/:id
+
+## Database Model
+
+### Project
+
+- [ ] id
+- [ ] title
+- [ ] description
+- [ ] image
+- [ ] url
+- [ ] category
+
+---
+
+# 8. Admin Management
+
+## Endpoints
+
+- [ ] GET /admin/stats
+- [ ] GET /admin/users
+- [ ] DELETE /admin/users/:id
+
+---
+
+# 9. File Uploads
+
+## Endpoint
+
+- [ ] POST /upload
+
+### Storage Options
+
+- [ ] Local storage
+- [ ] Cloudinary
+- [ ] AWS S3 (optional)
+
+---
+
+# 10. Email Notifications
+
+### Implement the following email triggers
+
+- [ ] Contact form notifications
+- [ ] Password reset emails
+- [ ] Enrollment confirmations
